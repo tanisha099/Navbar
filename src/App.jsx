@@ -1,6 +1,5 @@
 import { CiMenuFries } from "react-icons/ci";
 import { MdOutlineCancel } from "react-icons/md";
-import { MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { useState } from "react";
 function App() {
@@ -8,7 +7,7 @@ function App() {
   let [isicon,setisicon] =  useState(false);
   return (
     <>
-    <nav className=" py-7 flex flex-row  justify-between md:justify-center px-9 md:py-2  md:px-3 bg-gray-100">
+    <nav  className = " py-7 flex flex-row  justify-between md:justify-center px-9 md:py-2  md:px-3 bg-gray-100">
       <div className= {` h-20 px-5 lg:px-24 text-center py-4 md:py-4 lg:py-5  absolute md:relative ${isopen ? 'top-24 w-full left-0 ' : 'top-0'}`}>
         <h1 className="text-3xl  font-medium">ACME</h1>
         <h6 className="text-xs  font-serif font-bold text-green-800">CORPORATION</h6>
@@ -22,7 +21,6 @@ function App() {
               <CiMenuFries />
           }
         </div>
-   
       </div>
       <div className= {`flex-col md:flex-row flex  w-full md:w-[80%] md:h-20 md:py-5 h-56 text-center  md:justify-evenly md:gap-3 absolute left-0 md:static ${isopen ? 'top-44' : '-top-96'} `} >
       <div>
@@ -64,9 +62,7 @@ function App() {
 
         </div>
       </div>
-
       </div>
-      
     </nav>
     </>
   )
