@@ -1,65 +1,63 @@
-import { CiMenuFries } from "react-icons/ci";
+
+import { MdOutlineMenu } from "react-icons/md";
 import { MdOutlineCancel } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 import { useState } from "react";
+import Logo from "./assets/Logo.png";
 function App() {
   let [isopen,setisopen] =  useState(false);
   let [isicon,setisicon] =  useState(false);
   return (
     <>
-    <nav  className = " py-7 flex flex-row  justify-between md:justify-center px-9 md:py-2  md:px-3 bg-gray-100">
-      <div className= {` h-20 px-5 lg:px-24 text-center py-4 md:py-4 lg:py-5  absolute md:relative ${isopen ? 'top-24 w-full left-0 ' : 'top-0'}`}>
-        <h1 className="text-3xl  font-medium">ACME</h1>
-        <h6 className="text-xs  font-serif font-bold text-green-800">CORPORATION</h6>
+    <nav  className = "  flex flex-row py-0 px-9 lg:py-1 justify-between  bg-black ">
+      <div className=   {`text-center h-14 w-16 my-1 lg:hidden  ${isopen ? 'opacity-0 ' : 'bg-opacity-85'} `}>
+     <img className="h-full w-full" src={Logo} alt="" />
       </div>
-      <div onClick={() => setisopen(!isopen)} className="  h-8 w-11 md:hidden ml-auto">
-        <div  className="  flex justify-center  text-5xl text-black">
+      <div onClick={() => setisopen(!isopen)} >
+        <div  className="  flex justify-center my-3 lg:hidden  text-white text-4xl">
           {
             isopen ? 
-              <MdOutlineCancel />
+              <RxCross2 />
             : 
-              <CiMenuFries />
+              <MdOutlineMenu />
           }
         </div>
       </div>
-      <div className= {`flex-col md:flex-row flex  w-full md:w-[80%] md:h-20 md:py-5 h-56 text-center  md:justify-evenly md:gap-3 absolute left-0 md:static ${isopen ? 'top-44' : '-top-96'} `} >
-      <div>
-        <ul className="list-none flex flex-col md:flex-row justify-between px-20 lg:px-1 xl:px-28 md:px-0 text-2xl">
-          <li className="py-1 md:px-2 text-xl md:text-2sm lg:text-2xl lg:px-2 xl:text-2xl xl:px-5 text-gray-800   font-sans hover:text-green-800 hover:border-b-2 hover:border-green-900" >
-            <a href="#">Catalog</a>
+      <div className= {`flex-col lg:flex-row lg:justify-evenly lg:px-5 lg:static flex w-full text-center transition-all duration-500 bg-black  md:justify-evenly md:gap-3 absolute left-0 ${isopen ? 'top-14' : '-top-[420px]'} `} >
+       <div className=" md:flex lg:flex-row  lg:mt-0  lg:w-full lg:justify-around justify-between">
+        <div className="lg:flex lg:flex-row flex justify-center lg:py-0 items-center h-20  w-full lg:h-16 md:w-24  md:pl-6 ">
+          <img className="w-24 md:w-full " src={Logo} alt="" />
+        </div>
+      <div className=" lg:px-2  lg:py-0">
+        <ul className="list-none flex  lg:flex-row flex-col md:flex-row justify-between text-center md:pt-0 md:px-10 lg:my-0   md:my-4 text-2xl lg:text-xl lg:pt-1 xl:pt-0 xl:text-2xl md:text-2xl pt-3">
+          <li className=" font-normal py-1 md:px-3 lg:py-3 text-white  hover:text-gray-500  hover:rotate-6 " >
+            <a className="tracking-widest lg:tracking-normal" href="#">Catalog</a>
           </li>
-          <li className="py-1 md:px-2  md:text-2sm text-xl lg:text-2xl lg:px-2 xl:text-2xl xl:px-5 text-gray-800 font-sans hover:text-green-800 hover:border-b-2 hover:border-green-900">
-            <a href="#">Delivery</a>
+          <li className=" font-normal py-1 md:px-3 lg:py-3  text-white hover:text-gray-500  hover:rotate-6">
+            <a className="tracking-widest lg:tracking-normal " href="#">Delivery</a>
           </li>
-          <li className="py-1 md:px-2 text-xl md:text-2sm lg:text-2xl lg:px-2 xl:text-2xl xl:px-5 text-gray-800 font-sans hover:text-green-800 hover:border-b-2 hover:border-green-900">
-            <a href="#">Payment</a>
+          <li className=" font-normal py-1 md:px-3 lg:py-3  text-white hover:text-gray-500 hover:rotate-6">
+            <a className="tracking-widest lg:tracking-normal" href="#">Payment</a>
           </li>
-          <li className="py-1 md:px-2 text-xl md:text-2sm lg:text-2xl lg:px-2 xl:text-2xl xl:px-5 text-gray-800 font-sans hover:text-green-800 hover:border-b-2 hover:border-green-900">
-            <a href="#">Contact</a>
+          <li className="font-normal py-1 md:px-3 lg:py-3  text-white hover:text-gray-500 hover:rotate-6 ">
+            <a  className="tracking-widest lg:tracking-normal"href="#">Contact</a>
           </li>
-          <li className="py-1 md:px-2 text-xl md:text-2sm lg:text-2xl lg:px-2 xl:text-2xl xl:px-5 text-gray-800 font-sans hover:text-green-800 hover:border-b-2 hover:border-green-900">
-            <a href="#">About</a>
+          <li className=" font-normal py-1 md:px-3 lg:py-3  text-white hover:text-gray-500 hover:rotate-6">
+            <a className="tracking-widest lg:tracking-normal" href="#">About</a>
           </li>
         </ul>
+        </div>
       </div>
-      <div>
-        <div className="flex-col flex md:hidden  lg:flex-row text-center lg:flex lg:h-10 justify-center items-center gap-3  pt-7 lg:pt-0">
-          <button className=" h-14 w-72  lg:h-11 md:w-32 flex items-center justify-center text-xl border-green-900 border-2 hover:bg-green-900 text-green-900 hover:text-white rounded">
+      <div> 
+        <div className="flex-col flex md:flex-row md:justify-end lg:px-1 md:px-11 pb-5 lg:pb-0 text-center lg:h-10 justify-center items-center gap-3  py-2 lg:pt-5">
+          <button className=" h-11 w-40 xl:h-11 xl:w-28 lg:h-11 lg:w-28 lg:text-2sm xl:text-xl md:h-11 md:w-36  flex items-center justify-center text-xl bg-white border-2  hover:border-white hover:text-white hover:bg-transparent  rounded">
           Sign In
           </button>
-          <button className=" h-14 w-72 lg:h-11 md:w-32  flex items-center justify-center text-xl bg-green-900 text-white rounded border-2 hover:text-green-900 hover:border-green-900 hover:bg-transparent">
+          <button className=" h-11 w-40 xl:h-11 xl:w-28 lg:h-11 lg:w-28  lg:text-2sm xl:text-xl md:h-11 md:w-36 flex items-center justify-center text-xl bg-white border-2  hover:border-white hover:text-white hover:bg-transparent  rounded">
           Join Now
           </button>
         </div>
-        <div className=" hidden md:flex lg:hidden  text-black items-center mx-1 my-0 text-4xl gap-5">
-        <IoIosArrowDown onClick={() => setisicon(!isicon)}/>
-        <div className={ ` bg-green-800 text-white text-2xl absolute px-2   ${isicon ? 'top-16 right-2  ' : 'hidden'}`}>
-          <h2 className=" hover:text-green-400 p-2">Sign In</h2>
-          <h2 className=" hover:text-green-400 p-2">Join Now</h2>
-        </div>
-        </div>
         <div>
-
         </div>
       </div>
       </div>
